@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <% include ../partials/header.ejs %>
+  <link rel="stylesheet" type="text/css" href="/stylesheets/signin.css" />
+</head>
+
+<body>
+
+  <% if (error) { %>
+    <div class="alert alert-danger" role="alert">
+      <h2>The Username or Password is <strong>INCORRECT</strong></h2>
+    </div>
+  <% } %>
+
+  <% include ../partials/login_form.ejs %>
+
+</body>
+</html>

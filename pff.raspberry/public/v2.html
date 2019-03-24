@@ -1,0 +1,372 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	<link rel="apple-touch-icon" sizes="76x76" href="favicon.ico" />
+	<link rel="icon" type="image/png" href="favicon.ico" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+
+	<title>PFF HOME</title>
+
+	<meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
+	<meta name="viewport" content="width=device-width" />
+	<!-- Bootstrap core CSS     -->
+	<link href="css2/bootstrap.min.css" rel="stylesheet" />
+	<!--  Material Dashboard CSS    -->
+	<link href="css2/material-dashboard.css" rel="stylesheet"/>
+	<!--     Fonts and icons
+	<link href="css2/font-awesome.min.css" rel="stylesheet">
+-->
+<!--  Bootstrap-toggle  -->
+<link href="css2/bootstrap-toggle.min.css" rel="stylesheet">
+</head>
+
+<body>
+
+	<div class="wrapper">
+		<div class="sidebar" data-color="blue" data-image="img2/sidebar-0.jpg">
+
+			<div class="logo"><a href="#" class="simple-text">Home System</a></div>
+
+			<div class="sidebar-wrapper">
+				<ul class="nav">
+					<li id="elements_button" class="active"><a href="#">
+						<i>
+							<svg fill="#fff" height="24" viewBox="0 0 24 24" width="24">
+								<path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/>
+								<path d="M0 0h24v24H0z" fill="none"/>
+							</svg>
+						</i>
+						<p>HOME SETUP</p>
+					</a>
+				</li>
+
+				<li id="camera_button"><a href="#">
+					<i>
+						<svg fill="#888" height="24" viewBox="0 0 24 24" width="24">
+							<path d="M0 0h24v24H0z" fill="none"/>
+							<path d="M17 10.5V7c0-.55-.45-1-1-1H4c-.55 0-1 .45-1 1v10c0 .55.45 1 1 1h12c.55 0 1-.45 1-1v-3.5l4 4v-11l-4 4z"/>
+						</svg>
+					</i>
+					<p>CAMERA</p>
+				</a>
+			</li>
+
+			<li id="settings_button"><a href="#">
+				<i>
+					<svg fill="#888" height="24" viewBox="0 0 24 24" width="24">
+						<path clip-rule="evenodd" d="M0 0h24v24H0z" fill="none"/>
+						<path d="M22.7 19l-9.1-9.1c.9-2.3.4-5-1.5-6.9-2-2-5-2.4-7.4-1.3L9 6 6 9 1.6 4.7C.4 7.1.9 10.1 2.9 12.1c1.9 1.9 4.6 2.4 6.9 1.5l9.1 9.1c.4.4 1 .4 1.4 0l2.3-2.3c.5-.4.5-1.1.1-1.4z"/>
+					</svg>
+				</i>
+				<p>SETTINGS</p>
+			</a>
+		</li>
+	</ul>
+</div>
+</div>
+
+<div class="main-panel">
+	<nav class="navbar navbar-transparent navbar-absolute">
+		<div class="container-fluid">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle" data-toggle="collapse">
+					<span class="sr-only">Toggle navigation</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand" href="#">Home Elements</a>
+			</div>
+
+			<div class="collapse navbar-collapse">
+				<div class="navbar-form navbar-right">
+					<form id="text_input_form" class="form-group  is-empty">
+						<input id="text_input" type="text" class="form-control" placeholder="Ask me ...">
+						<span class="material-input"></span>
+					</form>
+					<button id="assistant_button" class="btn btn-white btn-round btn-just-icon" type="button" data-toggle="modal" data-target="#assistant_modal">
+						<svg fill="#000000" height="24" viewBox="0 0 24 24" width="24">
+							<path d="M12 15c1.66 0 2.99-1.34 2.99-3L15 6c0-1.66-1.34-3-3-3S9 4.34 9 6v6c0 1.66 1.34 3 3 3zm5.3-3c0 3-2.54 5.1-5.3 5.1S6.7 15 6.7 12H5c0 3.42 2.72 6.23 6 6.72V22h2v-3.28c3.28-.48 6-3.3 6-6.72h-1.7z"/>
+							<path d="M0 0h24v24H0z" fill="none"/>
+						</svg>
+					</button>
+				</div>
+			</div>
+		</div>
+	</nav>
+	<!--main content-->
+	<div class="content">
+		<div class="container-fluid">
+			<div id="elements_container" class="row pageContainer">
+
+			</div>
+
+			<div id="camera_container" class="row pageContainer" style="display: none;">
+				<div class="col-md-12">
+					<div class="card">
+						<div class="card-header card-chart" style="text-align: center;">
+							<canvas class="cam" id="video-canvas" style="width: 80%;"></canvas>
+						</div>
+						<div class="card-content">
+							<h3 class="title">Live Streaming</h3>
+							<p class="category">Set Cam Position :</p>
+						</div>
+						<div class="card-footer">
+							<div class="stats">
+								<p>Cam Position :<span class="text-success"><b id="cam_pos_val">55</b>&ordm;</span></p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div id="settings_container" class="row pageContainer" style="display: none;">
+
+				<div class="col-md-12"> <!-- edit language -->
+					<div class="card">
+						<div id="edit_lang_button" class="card-header" data-background-color="">
+							<h4 class="title">Edit Language and Voice</h4>
+							<p class="category">Selected Language: <b id="lang_statu">en-US</b>&nbsp;&nbsp;&nbsp; Voice: <b id="voice_statu">enable</b></p>
+						</div>
+						<div id="edit_lang_form" class="card-content">
+								<table class="table">
+									<thead>
+										<tr>
+											<th>Select Language:</th>
+											<th>
+												<select class="form-control" id="language_select">
+													<option value="en-US" selected="selected">English (United States)</option>
+													<option value="ar-TN">Arab (Tunisia)</option>
+													<option value="fr-FR">Francais (France)</option>
+												</select>
+											</th>
+										</tr>
+										<tr>
+											<th>Speech Synthesis:</th>
+											<th>
+												<select class="form-control" id="voice_statu_select">
+													<option value="Enable" selected="selected">Enable</option>
+													<option value="Disable">Disable</option>
+												</select>
+											</th>
+										</tr>
+									</thead>
+								</table>
+						</div>
+					</div>
+				</div><!-- edit language -->
+
+				<div class="col-md-12">
+					<div class="card card-plain">
+						<div class="card-header" data-background-color="red">
+							<h4 class="title">List of all authorized element</h4>
+							<p class="category"><b id="nc-number"></b> Element not connect</p>
+						</div>
+						<div class="card-content table-responsive">
+							<table class="table table-hover">
+								<thead>
+									<tr><th>ID</th>
+										<th>Comment</th>
+										<th>Type</th>
+										<th>Statu</th>
+									</tr>
+								</thead>
+								<tbody id="table_content">
+
+								</tbody>
+							</table>
+						</div>
+					</div>
+				</div>
+
+				<div class="col-md-12"> <!-- edit element -->
+					<div class="card">
+						<div id="edit_button" class="card-header point" data-background-color="purple">
+							<h4 class="title">Edit Home Element</h4>
+							<p class="category">Change element type or comment</p>
+						</div>
+						<div class="card-content">
+							<form id="edit_form" style="display: none;">
+								<div class="row">
+									<div class="col-md-2 col-sm-3">
+										<div class="form-group label-floating is-empty">
+											<label for="sel-id" class="control-label">ID</label>
+											<select class="form-control" id="edit_id" required>
+												<option selected="selected" style="display: none;"></option>
+											</select>
+											<span class="material-input"></span>
+										</div>
+									</div>
+									<div class="col-md-2 col-sm-3">
+										<div class="form-group label-floating is-empty">
+											<label for="sel-type" class="control-label">Type</label>
+											<select class="form-control" id="edit_type">
+												<option selected="selected" style="display: none;"></option>
+												<option>lamp</option>
+												<option>lock</option>
+											</select>
+											<span class="material-input"></span>
+										</div>
+									</div>
+									<div class="col-md-8 col-sm-6">
+										<div class="form-group label-floating is-empty">
+											<label class="control-label">Comment</label>
+											<input id="edit_comment" type="text" class="form-control">
+											<span class="material-input"></span>
+										</div>
+									</div>
+								</div>
+								<button id="edit_submit" class="btn btn-primary pull-right" type="submit">Update Element</button>
+								<div class="clearfix"></div>
+							</form>
+						</div>
+					</div>
+				</div><!-- edit element -->
+
+				<div class="col-md-12"><!-- add element -->
+					<div class="card">
+						<div id="add_button" class="card-header point" data-background-color="purple">
+							<h4 class="title">Add Home Element</h4>
+							<p class="category">Add new home element to list</p>
+						</div>
+						<div class="card-content">
+							<form id="add_form" style="display: none;">
+								<div class="row">
+									<div class="col-md-2 col-sm-3">
+										<div class="form-group label-floating is-empty">
+											<label for="sel-id" class="control-label">ID</label>
+											<input id="add_id" type="text" class="form-control" required>
+											<span class="material-input"></span>
+										</div>
+									</div>
+									<div class="col-md-2 col-sm-3">
+										<div class="form-group label-floating is-empty">
+											<label for="sel-type" class="control-label">Type</label>
+											<select class="form-control" id="add_type" required>
+												<option selected="selected" style="display: none;"></option>
+												<option>lamp</option>
+												<option>lock</option>
+											</select>
+											<span class="material-input"></span>
+										</div>
+									</div>
+									<div class="col-md-8 col-sm-6">
+										<div class="form-group label-floating is-empty">
+											<label class="control-label">Comment</label>
+											<input id="add_comment" type="text" class="form-control">
+											<span class="material-input"></span>
+										</div>
+									</div>
+								</div>
+								<div class="row">
+									<div class="col-sm-12">
+										<div class="form-group label-floating is-empty">
+											<label class="control-label">PassWord</label>
+											<input id="add_key" type="text" class="form-control" required>
+											<span class="material-input"></span>
+										</div>
+									</div>
+								</div>
+								<button id="add_submit" class="btn btn-primary pull-right" type="submit">Add Element</button>
+								<div class="clearfix"></div>
+							</form>
+						</div>
+					</div>
+				</div><!-- add element -->
+
+				<div class="col-md-12"> <!-- delet element -->
+					<div class="card">
+						<div id="delet_button" class="card-header point" data-background-color="purple">
+							<h4 class="title">Delet Home Element</h4>
+							<p class="category">Remove home element from list</p>
+						</div>
+						<div class="card-content">
+							<form id="delet_form" style="display: none;">
+								<div class="row">
+									<div class="col-md-2 col-sm-3">
+										<div class="form-group label-floating is-empty">
+											<label for="sel-id" class="control-label">ID</label>
+											<select class="form-control" id="delet_id" required>
+												<option selected="selected" style="display: none;"></option>
+											</select>
+											<span class="material-input"></span>
+										</div>
+									</div>
+									<div class="col-md-8 col-sm-6">
+										<div class="form-group label-floating is-empty">
+											<label class="control-label">PassWord</label>
+											<input id="delet_key" type="text" class="form-control" required>
+											<span class="material-input"></span>
+										</div>
+									</div>
+								</div>
+								<button id="delet_submit" class="btn btn-primary pull-right" type="submit">Delet Element</button>
+								<div class="clearfix"></div>
+							</form>
+						</div>
+					</div>
+				</div><!-- delet element -->
+
+			</div><!-- settings -->
+
+		</div><!-- pages handler -->
+	</div>
+	<!--main content-->
+	<footer class="footer">
+		<div class="container-fluid">
+			<nav class="pull-left">
+				<ul>
+					<li>
+						<a href="#">PFF-Raspberry</a>
+					</li>
+
+				</ul>
+			</nav>
+			<p class="copyright pull-right">&copy; Designed & Coded by <a href="http://gzizou.ml">MED-SALEM</a></p>
+		</div>
+	</footer>
+</div>
+</div>
+
+<!-- Assistant modal -->
+<div id="assistant_modal" class="modal fade" tabindex="-1" role="dialog" style="text-align: center;">
+  <div class="modal-dialog modal-sm" role="document">
+    <div class="modal-content transparent">
+      <h2 class="text-top">Listening ...</h2>
+			<img class="cercle" src="/img2/assistant_icon.gif">
+    </div>
+  </div>
+</div>
+<!-- Assistant modal -->
+
+</body>
+
+<!--   Core JS Files   -->
+<script src="js2/jquery-3.1.0.min.js" type="text/javascript"></script>
+<script src="js2/bootstrap.min.js" type="text/javascript"></script>
+<script src="js2/material.min.js" type="text/javascript"></script>
+
+<!--  Charts Plugin
+<script src="../assets/js/chartist.min.js"></script>
+-->
+
+<!--  Notifications Plugin    -->
+<script src="js2/bootstrap-notify.js"></script>
+<!-- Material Dashboard javascript methods -->
+<script src="js2/material-dashboard.js"></script>
+<!--  Bootstrap-toggle  -->
+<script src="js2/bootstrap-toggle.min.js"></script>
+
+<!-- UI plugin -->
+<script type="text/javascript" src="/socket.io/socket.io.js"></script>
+<script type="text/javascript" src="js2/responsivevoice.js"></script>
+<script type="text/javascript" src="js2/jsmpeg.min.js"></script>
+
+<!--  UI core -->
+<script type="text/javascript" src="js2/UI.js"></script>
+<script type="text/javascript" src="js2/RECOGNITION.js"></script>
+<script type="text/javascript" src="js2/WEBCAM.js"></script>
+<script type="text/javascript" src="js2/PROTOCOL.js"></script>
+
+</html>

@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.medsalem.pff_app.MainActivity">
+
+    <LinearLayout
+        android:layout_width="360dp"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        tools:layout_editor_absoluteX="8dp"
+        tools:layout_editor_absoluteY="8dp"
+        android:padding="5dp">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Direct Connection to esp8266" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <EditText
+                android:id="@+id/element_password"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:inputType="numberPassword"
+                android:textAlignment="center"
+                android:textColorLink="@color/colorPrimary" />
+
+            <Button
+                android:id="@+id/set_password_button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Set password" />
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/tcp_message_textView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Not Connected"
+            android:textAlignment="center"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:layout_margin="5dp"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <Button
+                android:text="send on command"
+                android:id="@+id/tcp_on_button"
+                android:layout_width="180dp"
+                android:layout_height="wrap_content" />
+
+            <Button
+                android:text="send off command"
+                android:id="@+id/tcp_off_button"
+                android:layout_width="180dp"
+                android:layout_height="wrap_content" />
+
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/online_url_button"
+            android:text="connect online server"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="100dp"/>
+
+        <Button
+            android:id="@+id/local_url_button"
+            android:text="connect local server"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+    </LinearLayout>
+
+</android.support.constraint.ConstraintLayout>

@@ -1,0 +1,27 @@
+{
+  "name": "pff.raspberry",
+  "version": "1.0.0",
+  "description": "raspberry local server",
+  "main": "index.js",
+  "scripts": {
+    "test": "node index.js 8181 http://localhost:8080",
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "author": "Med Salem",
+  "license": "ISC",
+  "homepage": "",
+  "dependencies": {
+    "colors": "^1.1.2",
+    "express": "^4.14.0",
+    "ffmpeg-watchdog": "0.0.1",
+    "mosca": "^2.3.0",
+    "python-shell": "^0.4.0",
+    "rpio": "^0.9.14",
+    "socket.io": "^1.7.2",
+    "socket.io-client": "^1.7.2"
+  }
+}

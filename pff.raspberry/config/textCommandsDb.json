@@ -1,0 +1,88 @@
+{
+  "ar-TN":[
+    {
+      "errorResponce": [],
+      "lowConfidence": ["عفوا  ماذا قلت؟"]
+    },
+    {
+      "messageText": ["سلام", "اهلا", "مرحبا"],
+      "messageResponce": ["أهلا وسهلا ومرحبا بكم", "حاضر", "مرحبا", "اهلا", "سلام"],
+      "elementsCommand": [
+        {"id": "0000", "statu": true},
+        {"id": "0001", "statu": true},
+        {"id": "0002", "statu": true},
+        {"id": "0003", "statu": true}
+      ]
+    },
+    {
+      "messageText": ["الى اللقاء", "بالسلامه"],
+      "messageResponce": ["اراك لاحقا", "الى اللقاء", "مع السلامه"],
+      "elementsCommand": [
+        {"id": "0000", "statu": false},
+        {"id": "0001", "statu": false},
+        {"id": "0002", "statu": false},
+        {"id": "0003", "statu": false}
+      ]
+    },
+    {
+      "messageText": ["يمين"],
+      "camPosistionCommand": 1000
+    },
+    {
+      "messageText": ["يسار"],
+      "camPosistionCommand": -1000
+    }
+  ],
+  "en-US":[
+    {
+      "errorResponce": ["sorry i don't understand that"],
+      "lowConfidence": ["please repeat what you just said"]
+    },
+    {
+      "messageText": ["hi", "hello"],
+      "messageResponce": ["hello", "welcome home", "ok", "hi"],
+      "elementsCommand": [
+        {"id": "0000", "statu": true},
+        {"id": "0001", "statu": true},
+        {"id": "0002", "statu": true},
+        {"id": "0003", "statu": true}
+      ]
+    },
+    {
+      "messageText": ["bye", "goodbye"],
+      "messageResponce": ["see you", "goodbye", "bye bye", "see you soon"],
+      "elementsCommand": [
+        {"id": "0000", "statu": false},
+        {"id": "0001", "statu": false},
+        {"id": "0002", "statu": false},
+        {"id": "0003", "statu": false}
+      ]
+    }
+  ],
+  "fr-FR":[
+    {
+      "errorResponce": ["Désolé je ne comprends pas ça"],
+      "lowConfidence": ["S'il vous plaît, Répétez ce que vous avez dit"]
+    },
+    {
+      "messageText": ["salut"],
+      "messageResponce": ["salut"],
+      "elementsCommand": [
+        {"id": "0000", "statu": true},
+        {"id": "0001", "statu": true},
+        {"id": "0002", "statu": true},
+        {"id": "0003", "statu": true}
+      ]
+    },
+    {
+      "messageText": ["au revoir"],
+      "messageResponce": ["au revoir", "a bientot"],
+      "elementsCommand": [
+        {"id": "0000", "statu": false},
+        {"id": "0001", "statu": false},
+        {"id": "0002", "statu": false},
+        {"id": "0003", "statu": false}
+      ]
+    }
+  ]
+}

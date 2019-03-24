@@ -1,0 +1,17 @@
+{
+  "homeServer":{
+    "tcpPort": 80
+  },
+  "mqttServer":{
+    "userName": "home",
+    "passWord": "0000"
+  },
+  "remoteServer":{
+    "remoteServerUrl": "https://pff-server.herokuapp.com",
+    "userName": "testuser",
+    "passWord": "0000"
+  },
+  "elementsData_File"  : "./config/homeElements.json",
+  "textCommandsDb_File": "./config/textCommandsDb.json",
+  "cam_device_name": "/dev/video0"
+}

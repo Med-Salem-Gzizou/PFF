@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script type="text/javascript" src="/js/jquery-3.1.1.min.js"></script>
+    <script type="text/javascript" src="/socket.io/socket.io.js"></script>
+    <script type="text/javascript" src="/js/responsivevoice.js"></script>
+    <!--"http://code.responsivevoice.org/responsivevoice.js"-->
+    <!--
+      <link rel="stylesheet" href="/css/bootstrap.min.css"/>
+      <link rel="stylesheet" href="/css/bootstrap-theme.min.css"/>
+      <script src="/js/bootstrap.min.js"></script>
+    -->
+    <link rel="stylesheet" href='/css/style.css' />
+	  <script type="text/javascript" src="/js/UI.js"></script>
+    <script type="text/javascript" src="/js/PROTOCOL.js"></script>
+    <script type="text/javascript" src="/js/RECOGNITION.js"></script>
+  </head>
+  <body>
+    <div id="menu">
+    		<a class="menu_elemant" id="home_button" href="#HOME" >
+    			<img class='icon' src="/img/home_button_icon_2.png" class="button">
+    			<p>HOME</p>
+    		</a>
+    		<a class="menu_elemant" id="cams_button" href="#CAMERAS" >
+    			<img class='icon' src="/img/camera_icon.png" class="button">
+    			<p>CAMERAS</p>
+    		</a>
+    		<a class="menu_elemant" id="settings_button" href="#SETTINGS" >
+    			<img class='icon' src="/img/setting_icon.png" class="button">
+    			<p>SETTINGS</p>
+    		</a>
+    </div>
+
+    <div id="content">
+      <p style="background-color: #1d1d1d;">Designed & Coded by MED-SALEM</p>
+
+      <div id="assistant">
+        <img id="assistant_logo" src="/img/home_icon_2.gif">
+        <input id="msg_input" type="text" name="msg" placeholder="Ask me ..."></input>
+      </div>
+
+      <div id="home_page"><!--home_page-->
+
+        <div class="home_element" id="0000">
+          <div class="inline left">
+            <img class="img_element" src="/img/Light-Bulb-off.png">
+          </div>
+          <div class="inline right">
+            <p>light bulb exemple off</p>
+            <p>exemple description</p>
+          </div>
+        </div>
+        <div class="home_element" id="0001">
+          <div class="inline left">
+            <img class="img_element" src="/img/Light-Bulb-on.png">
+          </div>
+          <div class="inline right">
+            <p>light bulb exemple on</p>
+            <p>exemple description</p>
+          </div>
+        </div>
+
+      </div><!--home_page-->
+
+      <div id="cams_page" style="display: none;"><!--camspage-->
+        <script type="text/javascript" src="/js/jsmpeg.min.js"></script>
+        <script type="text/javascript" src="/js/WEBCAM.js"></script>
+        <canvas class="cam" id="video-canvas"></canvas>
+        <div id="cam_controler" class="noselect">
+          <div id="left_controler" class="controler_button">&lt;=</div>
+          <div id="cam_position_display">0 &ordm;</div>
+          <div id="right_controler" class="controler_button">=&gt;</div>
+        </div>
+      </div><!--camspage-->
+
+      <div id="settings_page" style="display: none;"><!--settings page-->
+
+        <div class="setting_element">
+          <h3 id="language_select_togle" class="setting_button noselect">Speech Language &nbsp;&nbsp;&nbsp;<b>&#92;&#47;</b></h3>
+          <table id="language_table" style="">
+            <tr>
+            <th><select name="language" id="speech_language" class="select_list inline">
+              <option value="ar-TN">Arab (Tunisia)</option>
+              <option value="en-US" selected="selected">English (United States)</option>
+              <option value="fr-FR">Francais (France)</option>
+            </select></th>
+            </tr>
+          </table>
+        </div>
+
+        <div class="setting_element setting_button" id="offline_elements_Button">
+          <h3><b id="number_ofElements_offline">2</b>&nbsp;&nbsp;&nbsp; Elements Not Connected &nbsp;&nbsp;&nbsp;<b>&#92;&#47;</b></h3>
+          <table id="offline_elements_list">
+            <tr>
+              <th>id</th><th>comment</th><th>type</th>
+            </tr>
+            <!--offline elements list-->
+          </table>
+        </div>
+
+        <div class="setting_element">
+          <h3 id="add_table_togle" class="setting_button noselect">Add Element &nbsp;&nbsp;&nbsp;<b>&#92;&#47;</b></h3>
+          <table id="add_table" style="display: none;">
+            <tr>
+              <th>id</th><th>key</th><th>type</th><th>comment</th><th>Submit</th>
+            </tr>
+            <tr>
+              <td><input type="text" class="setting_input" id="add_id"></td>
+              <td><input type="text" class="setting_input" id="add_key"></td>
+              <td><select id="add_type" name="type_list" class="select_list inline">
+                <option value="lamp">lamp</option>
+                <option value="lock">lock</option>
+              </select></td>
+              <td><input type="text" class="setting_input" id="add_comment"></td>
+              <td><button id="add_submit_button" class="setting_input">Add</button></td>
+            </tr>
+          </table>
+        </div>
+
+        <div class="setting_element">
+          <h3 id="edit_table_togle" class="setting_button noselect">Edit Element &nbsp;&nbsp;&nbsp;<b>&#92;&#47;</b></h3>
+          <table id="edit_table" style="display: none;">
+            <tr>
+              <th>id</th><th>type</th><th>comment</th><th>Submit</th>
+            </tr>
+            <tr>
+              <td><select id="edit_id" name="id_list" class="select_list inline">
+                <!--id list-->
+              </select></td>
+              <td><select id="edit_type" name="type_list" class="select_list inline">
+                <option value="lamp">lamp</option>
+                <option value="lock">lock</option>
+              </select></td>
+              <td><input type="text" class="setting_input" id="edit_comment"></td>
+              <td><button id="edit_submit_button" class="setting_input">Edit</button></td>
+            </tr>
+          </table>
+        </div>
+
+        <div class="setting_element">
+          <h3 id="delet_table_togle" class="setting_button noselect">Delet Element &nbsp;&nbsp;&nbsp;<b>&#92;&#47;</b></h3>
+          <table id="delet_table" style="display: none;">
+            <tr>
+              <th>id</th><th>key</th><th>Submit</th>
+            </tr>
+            <tr>
+              <td><select id="delet_id" name="id_list" class="select_list inline">
+                  <!--id list-->
+              </select></td>
+              <td><input type="text" class="setting_input" id="delet_key"></td>
+              <td><button id="delet_submit_button" class="setting_input">Delet</button></td>
+            </tr>
+          </table>
+        </div>
+
+      </div><!--settings page-->
+
+    </div>
+  </body>
+</html>

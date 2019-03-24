@@ -1,0 +1,69 @@
+
+################## protocol examples ##################;
+------------------------------------------------------
+//[web socket] Online server send status log
+------------------------------------------------------
+server_log: 'not.authorized';   // error socket login
+server_log: 'ok';               // command accepted and send
+server_log: 'home_offline';     // if home go ofline
+server_log: 'home_online';      // if home is online
+
+------------------------------------------------------
+//[web socket] Online server ask home for cam
+------------------------------------------------------
+cam_cmd: 'start';               // ask home to connect cam socket
+com_cmd: 'stop';                // ask home close cam socket
+
+------------------------------------------------------
+//[web socket] login to server
+------------------------------------------------------
+socket url query:{
+  user: <user>,                 // username
+  pass: <pass>,                 // password
+  connectionType: <type>        // 'homeServer', 'homeCam', 'usersCam'
+}
+
+------------------------------------------------------
+//[web socket] user send home commands:
+------------------------------------------------------
+'elements_command':{
+  id: <element_id>,             // (string)
+  statu: <element_status>      // (boolean) true, false
+}
+
+------------------------------------------------------
+//[web socket] user send message or voice command:
+------------------------------------------------------
+'message_command':{
+  lang: <Language>,             // (string)
+  text: <message>,              // (string)
+  confidence: 0.5               // (float) 0.0 => 1.0
+}
+
+------------------------------------------------------
+//[web socket] user send cam position command:
+------------------------------------------------------
+'set_cam_pos': <pos>            // (int) -90 => 90
+
+------------------------------------------------------
+//[web socket] home send status update:
+------------------------------------------------------
+'elements_info_update':{
+  0000:{ type: 'lamp', statu: true , comment: 'Front door lamp'},
+  0001:{ type: 'lamp', statu: false, comment: 'Bedroom lamp'},
+  0002:{ type: 'lamp', statu: true , comment: 'Garage lamp'}
+}
+
+'elements_status_update': {
+  0000: true,
+  0001: false,
+  0002: true
+}
+
+------------------------------------------------------
+//[web socket] home send message responce:
+------------------------------------------------------
+'message_responce':{
+  lang: <Language>,            // (string)
+  text: <message>,             // (string)
+}

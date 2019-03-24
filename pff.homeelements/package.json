@@ -1,0 +1,23 @@
+{
+  "name": "pff.homeelements",
+  "version": "1.0.0",
+  "description": "homeelements emulator",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "./node_modules/.bin/electron emulator_app/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://Med-Salem@bitbucket.org/Med-Salem/pff.homeelements.git"
+  },
+  "author": "Med-Salem",
+  "license": "ISC",
+  "homepage": "https://bitbucket.org/Med-Salem/pff.homeelements#readme",
+  "dependencies": {
+    "electron": "^1.6.2",
+    "jquery": "^3.2.1",
+    "mosca": "^2.3.0",
+    "mqtt": "^2.5.0"
+  }
+}

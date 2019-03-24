@@ -1,0 +1,37 @@
+{
+  "0000": {
+    "key": "1111111111",
+    "comment": "Front door lamp",
+    "type": "lamp"
+  },
+  "0001": {
+    "key": "0000000000",
+    "comment": "Bedroom lamp",
+    "type": "lamp"
+  },
+  "0002": {
+    "key": "2222222222",
+    "comment": "Garage lamp1",
+    "type": "lamp"
+  },
+  "0003": {
+    "key": "3333333333",
+    "comment": "Garage lamp2",
+    "type": "lamp"
+  },
+  "0004": {
+    "key": "4444444444",
+    "comment": "Front door",
+    "type": "lock"
+  },
+  "0005": {
+    "key": "5555555555",
+    "comment": "Garage door",
+    "type": "lock"
+  },
+  "0006": {
+    "key": "6666666666",
+    "comment": "bedroom window",
+    "type": "lock"
+  }
+}

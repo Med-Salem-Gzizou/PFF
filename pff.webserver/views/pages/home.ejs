@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <% include ../partials/header.ejs %>
+    <script type="text/javascript" src="/socket.io/socket.io.js"></script>
+    <link rel="stylesheet" href="/stylesheets/bootstrap-toggle.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/stylesheets/bootstrap-slider.min.css" rel="stylesheet">
+    <script type="text/javascript" src="/js/bootstrap-toggle.min.js"></script>
+    <script type="text/javascript" src="/js/notify.min.js"></script>
+    <script type="text/javascript" src="/js/jsmpeg.min.js"></script>
+    <script type="text/javascript" src="/js/bootstrap-slider.min.js"></script>
+
+    <script type="text/javascript" src="/js/PROTOCOL.js"></script>
+    <script type="text/javascript" src="/js/WEBCAM.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="/stylesheets/home.css" />
+    <script type="text/javascript" src="/js/home.js"></script>
+  </head>
+
+  <body>
+
+    <div class="container">
+      <div class="row row-offcanvas row-offcanvas-right">
+        <div class="col-xs-12 col-sm-9">
+
+          <p class="pull-right visible-xs">
+            <button type="button" class="btn btn-primary btn-xs" data-toggle="offcanvas">Toggle nav</button>
+          </p>
+          <div id="status_container" class="jumbotron">
+            <h1 id="server_msg">Welcom Home!</h1>
+            <p id="ui_msg">this is your home setup.</p>
+
+            <div id="cam_section" style="text-align: left; display: none;">
+              <canvas class="cam img-responsive" id="video-canvas" height="1px"></canvas>
+              <p id="slicer_label">Cam position:</p>
+              <input id="slider_cam_regulator" type="text"
+                data-slider-ticks="[-1000, 0, 1000]"
+                data-slider-ticks-labels='["-90d", "0d", "90d"]'
+                data-slider-ticks-snap-bounds="3"
+                data-slider-value="0"
+              />
+            </div>
+
+          </div>
+
+          <div id="main_page_container">
+            <div id="elements_container" class="row">
+              <!-- elements list -->
+            </div><!--/row-->
+
+            <div id="cam_container" class="row" style="display: none;">
+              <!-- cam -->
+            </div>
+
+            <div id="settings_container" class="row" style="display: none;">
+              <!-- settings -->
+            </div>
+          </div>
+
+        </div><!--/.col-xs-12.col-sm-9-->
+
+        <div class="col-xs-6 col-sm-3 sidebar-offcanvas" id="sidebar">
+          <div class="list-group" id="nav-buttons">
+            <a id="home_button" href="#" class="list-group-item active">Home</a>
+            <a id="cam_button" href="#" class="list-group-item">Cam</a>
+            <a id="settings_button" href="#" class="list-group-item">Settings</a>
+          </div>
+
+          <div id="assistant_section">
+          </div>
+        </div><!--/.sidebar-offcanvas-->
+      </div><!--/row-->
+
+      <hr>
+
+      <footer>
+        <p>Designed & Coded by <a href="http://gzizou.ml" target="_blank">@Med-Salem</a>.</p>
+      </footer>
+
+    </div><!--/.container-->
+
+  </body>
+</html>

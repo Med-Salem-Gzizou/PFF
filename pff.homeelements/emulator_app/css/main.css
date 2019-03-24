@@ -1,0 +1,63 @@
+body{
+  min-width: 600px;
+  margin: 5px;
+}
+input{
+  width: 100% !important;
+}
+.btn{
+  cursor: pointer;
+}
+.form-group{
+  width: 40%;
+}
+#addElementbutton{
+  width: 20%;
+}
+
+.center{
+  text-align: center !important;
+}
+
+.element{
+  border-radius: 10px;
+  border-color: rgba(0, 0, 0, 0.46);
+  border-style: solid;
+  margin: 10px;
+  padding: 10px;
+}
+.off{
+  background-color: rgba(255, 0, 0, 0.18);
+}
+.on{
+  background-color: rgba(0, 255, 0, 0.18);
+}
+
+table {
+    width: 100%;
+}
+
+td, th {
+    text-align: left;
+}
+
+td{
+  color: blue;
+}
+
+.element_info{
+  display: inline-block;
+  width: 55%;
+}
+.buttons{
+  width: 40%;
+  text-align: center;
+  vertical-align: top;
+  display: inline-block;
+}
+.element_button{
+  cursor: pointer;
+}
+.element_button_delet{
+  cursor: pointer;
+}

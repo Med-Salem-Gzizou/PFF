@@ -1,0 +1,284 @@
+/* For mobile phones: */
+html {
+  color: #fff;
+  background-color: #525252;
+  text-align: center;
+  min-width: 300px;
+}
+body {
+  margin: 0px;
+}
+
+.cam {
+  width: 100%;
+  height: auto;
+}
+
+#cam_position_display {
+  background-color: #f5f5f5;
+  color: black;
+  width: 20%;
+  margin: 5px;
+  display: inline-block;
+  font-size: -webkit-xxx-large;
+  box-shadow: 2px 4px 15px 1px #b5b5b5;
+}
+.controler_button {
+  background-color: #f5f5f5;
+  color: black;
+  width: 35%;
+  margin: 5px;
+  display: inline-block;
+  font-size: -webkit-xxx-large;
+  cursor: pointer;
+  box-shadow: 2px 4px 15px 1px #b5b5b5;
+}
+.controler_button:hover {
+  color: #fff;
+  background-color: #6b6b6b;
+  box-shadow: 2px 4px 15px 1px #ffffff;
+}
+.controler_button:active {
+  background-color: black;
+  transform: translateY(4px);
+  box-shadow: 2px 1px 6px 1px #cecece;
+  color: #fff;
+}
+
+.icon {
+  max-height: 40px;
+}
+#assistant {
+  position: fixed;
+  bottom: 0px;
+  right: 0px;
+}
+#assistant_logo {
+  opacity: 0.5;
+  height: 15vh;
+  border-radius: 50%;
+  margin: 5px;
+  transition-duration: 1s;
+  cursor: pointer;
+}
+#assistant_logo:hover {
+  opacity: 1;
+  /*height: 30vh;*/
+  box-shadow: 0px 0px 25px 2px #fff;
+}
+.logo_active {
+  opacity: 1 !important;
+  height: 30vh !important;
+  box-shadow: 0px 0px 25px 2px #fff !important;
+}
+#msg_input {
+  color: #000;
+  opacity: 0.5;
+  position: fixed;
+  bottom: 10px;
+  left: 10px;
+  width: 70%;
+  font-size: xx-large;
+  padding-left: 15px;
+  font-family: serif;
+  border-radius: 7px;
+  transition-duration: 1s;
+}
+.msg_active {
+  bottom: 50px !important;
+  opacity: 1 !important;
+}
+
+#menu {
+  background-color: #292929;
+  position: fixed;;
+  top: 0px;
+  width: 100%;
+}
+
+.menu_elemant {
+  color: inherit;
+  display: inline-block;
+  width: 32%;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  text-decoration: none;
+}
+.menu_elemant p {
+  margin: 0px;
+}
+.menu_elemant:hover {
+  background-color: #111;
+}
+.menu_elemant:active {
+  background-color: #000;
+}
+.active_button {
+  background-color: #000;
+}
+.noselect {
+  -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+     -khtml-user-select: none; /* Konqueror HTML */
+       -moz-user-select: none; /* Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome and Opera */
+}
+
+#content {
+  margin-top: 85px;
+  padding-bottom: 85px;
+}
+.home_element {
+  padding: 2px;
+  cursor: pointer;
+}
+.home_element:hover {
+  background-color: #000;
+}
+.inline {
+  display: inline-block;
+  vertical-align: middle;
+  font-size: large;
+}
+.inline p {
+  margin: 10px 0px 10px 0px;
+}
+.left {
+  width: 25%;
+}
+.right {
+  width: 65%;
+}
+.img_element {
+  height: 100px;
+}
+.setting_element{
+  font-size: larger;
+  padding: 0.5rem;
+}
+.setting_element:nth-child(even) {
+  background-color: #484848;
+}
+.setting_element:hover {
+  background-color: #1d1d1d;
+}
+
+.select_list {
+  color: #000;
+  background-color: inherit;
+  border-color: #fffefe;
+  border-radius: 0px;
+  border-width: 0 0 1px 0;
+  cursor: pointer;
+  text-align: center;
+  width: 100%;
+}
+.select_list:focus {
+  outline: none;
+}
+
+.setting_button{
+  cursor: pointer;
+  color: #d6d6d6;
+  padding: 20px 0px 20px 0px;
+  margin: 0px;
+}
+.setting_input{
+  font-size: inherit;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+  border-style: solid;
+  border-width: 0px;
+}
+.setting_input:hover{
+  background-color: #5d5d5d;;
+  color: white;
+}
+.setting_input:active{
+  background-color: black;
+  color: white;
+}
+
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+td, th {
+  border: 0px solid #9a9a9a;
+  text-align: left;
+  padding: 8px;
+}
+th {
+  background-color: #cccccc;
+  color: #212121;
+}
+td {
+  font-size: medium;
+}
+tr{
+  background-color: #484848;
+}
+tr:nth-child(even) {
+  background-color: #757575;
+}
+
+@media screen and (max-width: 480px) {
+  #menu{
+    min-width: 300px;
+  }
+  #cam_position_display {
+    display: none;
+  }
+  .controler_button {
+    width: 45%;
+  }
+}
+
+@media only screen and (orientation: landscape) and (min-width: 480px) {
+  /* For desktop: */
+  #menu {
+    padding-top: 20px;
+    width: 20%;
+    height: 100%;
+  }
+  .menu_elemant {
+    display: block;
+    width: 100%;
+    padding: 20px 0px 20px 0px;
+  }
+  #content {
+    margin-top: 5px;
+    margin-left: 20%;
+    padding-bottom: 85px;
+  }
+  #msg_input {
+    left: 15%;
+  }
+  .cam {
+    width: auto;
+    height: 90%;
+  }
+}
+
+@media screen and (max-height: 480px) {
+  #assistant{
+    /*display: none;*/
+    position: relative;
+  }
+  #assistant_logo{
+    height: 50px;
+    border-radius: 20%;
+    display: inline-block;
+  }
+  #msg_input{
+    position: relative;
+    left: 0px;
+    border-radius: 0px;
+    display: inline-block;
+    vertical-align: text-bottom;
+  }
+}
