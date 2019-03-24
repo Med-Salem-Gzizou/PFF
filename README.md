@@ -10,8 +10,8 @@ Web Server Demo: ( [https://pff-server.herokuapp.com/](https://pff-server.heroku
 
 ## HOME SERVER
 
-![UI](Images/home_server/WebUserInterface 2.png?raw=true "User Interface")
+![UI](Images/home_server/WebUserInterface2.png?raw=true "User Interface")
 
 ## HOME ELEMENTS
 
-![HOME ELEMENTS](Images/home_server/home-element.jpg?raw=true "Home Elements")
+![HOME ELEMENTS](Images/home_elements/home-element.jpg?raw=true "Home Elements")
